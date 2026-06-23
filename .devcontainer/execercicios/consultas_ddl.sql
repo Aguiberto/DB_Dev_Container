@@ -23,13 +23,18 @@ CREATE TABLE clinica.Medico(
 );
 
 CREATE TABLE clinica.Especialidade(
-    id,
-    descricao varchar(300),
+    id int primary key,
+    descricao varchar(300) not null,
     
 );
 
 CREATE TABLE clinica.MedicoEspecialidade(
-
+    cpf_medico char (11) primary key,
+    id_especialidade int primary key,
+    constraint cpf_med_fk foreign key(cpf_medico)         
+            references clinica.Medico(cpf),
+    constraint id_especialidade_fk foreign key(id_especialidade)
+            references clinica.Especialidade(id),
 );
 
 CREATE TABLE clinica.Agendamento(
