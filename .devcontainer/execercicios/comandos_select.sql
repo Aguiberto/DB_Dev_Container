@@ -117,6 +117,7 @@ FROM Medico
 JOIN Pessoa ON Medico.pessoa_id = Pessoa.id
 JOIN Especialidade ON Medico.especialidade_id = Especialidade.id
 
+-- Mostra a quantidade de consultas de cada médico
 SELECT
     Pessoas.nome AS nome_medico,
     COUNT(Agendamento.id) AS quantidade_consultas
