@@ -63,15 +63,15 @@ CREATE TABLE assiste(
 CREATE TABLE recebe(
     id_usuario INT,
     id_notificacao INT,
-    FOREIGN KEY (id_usuario), REFERENCES usuario(id_usuario),
-    FOREIGN KEY (id_notificacao), REFERENCES notificacao(id_notificacao),
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
+    FOREIGN KEY (id_notificacao) REFERENCES notificacao(id_notificacao),
     PRIMARY KEY(id_usuario, id_notificacao)
 
 );
 CREATE TABLE possui_filme(
     id_filme INT,
-    id_usuario int,
-    FOREIGN KEY (id_usuario), REFERENCES minha_lista(id_usuario),
-    FOREIGN KEY (id_filme), REFERENCES filme_serie(id_filme),
+    id_usuario INT,
+    FOREIGN KEY (id_usuario) REFERENCES minha_lista(id_usuario),
+    FOREIGN KEY (id_filme) REFERENCES filme_serie(id_filme),
     PRIMARY KEY(id_filme, id_usuario)
 );
