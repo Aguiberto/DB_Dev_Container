@@ -7,12 +7,12 @@ INSERT INTO categoria (id_categoria, categoria) VALUES
 (5,'Terror');
 
 -- B1 - Inserindo dados
-INSERT INTO filme_serie(id_filme,nome,descricao, ano, faixa_etaria) VALUES
-(10,'Stranger Things','Adolecentes resolvendo misterios',2019,'16+'),
-(20,'Exterminador do Futuro','IA que quer destruir a humanidade',2027,'18+'),
-(30,'Kungfusão','Melhor filme de comédia',2005,'Livre'),
-(40,'Round 6','Série que popularizou os Coreanos', 2023,'Livre'),
-(50,'Senhor dos aneis','Pena que acabou', 2007,'Livre');
+INSERT INTO filme_serie(id_filme,id_categoria,nome,descricao, ano, faixa_etaria) VALUES
+(10,5,'Stranger Things','Adolecentes resolvendo misterios',2019,'16+'),
+(20,2,'Exterminador do Futuro','IA que quer destruir a humanidade',2027,'18+'),
+(30,4,'Kungfusão','Melhor filme de comédia',2005,'Livre'),
+(40,3,'Round 6','Série que popularizou os Coreanos', 2023,'Livre'),
+(50,2,'Senhor dos aneis','Pena que acabou', 2007,'Livre');
 
 -- B1 - Inserindo dados
 INSERT INTO notificacao(id_notificacao, mensagem, data_hora) VALUES

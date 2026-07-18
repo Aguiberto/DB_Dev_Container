@@ -5,10 +5,12 @@ CREATE TABLE categoria(
 
 CREATE TABLE filme_serie(
     id_filme INT PRIMARY KEY,
+    id_categoria INT,
     nome VARCHAR(150) NOT NULL,
     descricao TEXT,
     ano INT,
-    faixa_etaria varchar(10)
+    faixa_etaria varchar(10),
+    FOREIGN KEY(id_categoria) REFERENCES categoria(id_categoria)
 );
 
 CREATE TABLE notificacao(

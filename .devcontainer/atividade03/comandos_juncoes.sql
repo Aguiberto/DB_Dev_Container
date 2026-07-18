@@ -8,11 +8,11 @@ JOIN categoria ON filme_serie.id_categoria = categoria.id_categoria;
 
 --D2 selecionando atributos de 3 tabelas diferentes
 SELECT
-    usuario.nome AS nome_usuario,
+    usuario.login AS nome_usuario,
     filme_serie.nome AS nome_filme,
     categoria.categoria AS categoria_filme
 FROM usuario
-JOIN assiste ON usuario.usuario_id = assiste.id_usuario
+JOIN assiste ON usuario.id_usuario = assiste.id_usuario
 JOIN filme_serie ON assiste.id_filme = filme_serie.id_filme
 JOIN categoria ON filme_serie.id_categoria = categoria.id_categoria;
 
@@ -21,13 +21,12 @@ SELECT
     categoria.categoria AS nome_categoria,
     filme_serie.nome AS nome_filme
 FROM categoria
-LEFT JOIN filme_serie ON categoria.id_categoria = fime_serie.id_categoria
+LEFT JOIN filme_serie ON categoria.id_categoria = filme_serie.id_categoria
 
 
---D4 mostrando os aparelhos de cada usuário, os aparelhos sem usuário ou os usuários sem aparelho
-SELECT
-    usuario.nome AS nome_usuario,
-    aparelho.tipo_aparelho AS aparelho_usado
-FROM usuario
-FULL OUTER JOIN aparelho ON usuario.usuario_id = aparelho.id_usuario
-
+--D4 mostrando os tipos de assinatura e os seus assinantes
+SELECT 
+    assinatura.tipo_assinatura,
+    usuario.login AS usuario_assinante
+FROM assinatura
+FULL OUTER JOIN usuario ON assinatura.id_assinatura = usuario.id_assinatura;
